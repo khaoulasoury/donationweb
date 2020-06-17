@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Donation</title>
+    <link rel="icon" href="{{ asset('template/img/favicon.png') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/bootstrap.min.css') }}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/animate.css') }}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/owl.carousel.min.css') }}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/themify-icons.css') }}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/flaticon.css') }}">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/magnific-popup.css') }}">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/nice-select.css') }}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/slick.css') }}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+</head>
+
+<body>
+<!--::header part start::-->
+<header style="background-color: #0d101d;" class="main_menu home_menu">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="#"> <img src="{{ asset('template/img/logo1.png') }}" alt="logo"> </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="ti-menu"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                         id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('homepage') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('aboutpage') }}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Events</a>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Associations</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Actions</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('contactpage') }}">Contact</a>
+                            </li>
+                            <li class="nav-item dropdown nav-user show">
+                                <a style="    margin-left: 40px; position: relative; left: 50px;" class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><img src="{{ asset('dashboard/assets/images/logo1.png')}}" alt="" class="user-avatar-md rounded-circle"></a>
+                                <div style="position: absolute; left: -20px;" class="dropdown-menu dropdown-menu-right nav-user-dropdown show" aria-labelledby="navbarDropdownMenuLink2">
+                                    <div style="background: #0d101d;height: 50px;position: relative;top: -10px;border: #0d101d;" class="nav-user-info">
+                                        <span class="status"></span><br><span style=" color:#ffffff;margin-top:30px;position:relative;top:-8px;" class="ml-2">
+
+                                        </span>
+                                    </div>
+                                    <a class="dropdown-item" href="{{ path('update_Association') }}"><i class="fas fa-user mr-2"></i>Account</a>
+                                    <a class="dropdown-item" href="{{ path('delete_Association') }}"><i class="fas fa-cog mr-2"></i>Desactivate</a>
+                                    <a class="dropdown-item" href="{{ path('logout_Association') }}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header part end-->
+<!-- breadcrumb start-->
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item text-center">
+                        <h2>Update</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+<div class="whole-wrap">
+    <div style=" display: flex;flex-flow: row wrap;justify-content: center;"class="container box_1170">
+
+        <div style="padding: 0;"class="section-top-border">
+            <div class="row">
+                <div style="display: flex;flex-flow: row wrap;justify-content: center;" class="col-lg-8 col-md-8">
+                    <h3 class="mb-30">Update your Account</h3>
+                    {{ form_start(form)}}
+                    <div style=" margin-top: 100px " class="mt-10">
+                        {{ form_widget(form.nomAssociation, { 'attr': {'class': 'single-input','placeholder': ' Name'} }) }}
+                    </div>
+                    <div class="mt-10">
+                        {{ form_widget(form.objectifAssociation, { 'attr': {'class': 'single-input','placeholder': 'Goals'} }) }}
+                    </div>
+                    <div class="mt-10">
+                        {{ form_widget(form.typeAssociation, { 'attr': {'class': 'single-input','placeholder': 'Type'} }) }}
+                    </div>
+                    <div class="mt-10">
+                        {{ form_widget(form.emailAssociation, { 'attr': {'class': 'single-input','placeholder': 'Email'} }) }}
+                    </div>
+                    <div class="mt-10">
+                        {{ form_widget(form.passwordAssociation, { 'attr': {'class': 'single-input','placeholder': 'Password'} }) }}
+                    </div>
+                    <div class="mt-10">
+                        {{ form_widget(form.descriptionAssociation, { 'attr': {'class': 'single-textarea','placeholder': 'Description'} }) }}
+                    </div>
+
+                    <div class="input-group-icon mt-10">
+                        {{ form_widget(form.addressAssociation, { 'attr': {'class': 'single-input','placeholder': 'Address'} })}}
+                    </div>
+
+                    <div class="input-group-icon mt-10">
+                        <div class="custom-file">
+                            {{ form_widget(form.imageFile, { 'attr' : { 'class' : 'custom-file-input','id' : 'fichier' } }) }}
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group-icon mt-10">
+                        <button style="width: 103px;margin-left:628px;margin-top: 10px;margin-bottom: 10px; " class="genric-btn success circle" type="submit">Sign Up</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer part start-->
+<footer class="footer-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="single-footer-widget footer_1">
+                    <a href="index.html.twig"> <img src="{{ asset('template/img/logo1.png') }}" alt=""> </a>
+                    <p>There are many ways to give, whether it’s through offering
+                        your time or resources. Regardless of the method taken,
+                        helping others is beneficial to not just those on the
+                        receiving end, but the ones doing the helping as well.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-4">
+                <div class="single-footer-widget footer_2">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest trends Seed heaven so said place winged over given forth fruit.
+                    </p>
+                    <div class="form-wrap" id="mc_embed_signup">
+                        <form target="_blank"
+                              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                              method="get" class="form-inline">
+                            <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                   onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                                   required="" type="email">
+                            <button class="btn btn-default text-uppercase"><i class="ti-angle-right"></i></button>
+                            <div style="position: absolute; left: -5000px;">
+                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                       type="text">
+                            </div>
+
+                            <div class="info"></div>
+                        </form>
+                    </div>
+                    <div class="social_icon">
+                        <a href="#"> <i class="ti-facebook"></i> </a>
+                        <a href="#"> <i class="ti-twitter-alt"></i> </a>
+                        <a href="#"> <i class="ti-instagram"></i> </a>
+                        <a href="#"> <i class="ti-skype"></i> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-md-4">
+                <div class="single-footer-widget footer_2">
+                    <h4>Contact us</h4>
+                    <p> 2074 Avenue 20 Mars, Mourouj</p>
+                    <div class="contact_info">
+                        <p><span class="ti-mobile"></span> +216 20 671 330</p>
+                        <p><span class="ti-email"></span>donation@gmail.com </p>
+                        <p><span class="ti-world"></span>www.donation.com </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- footer part end-->
+
+<!-- jquery plugins here-->
+
+<script src="{{ asset('template/js/jquery-1.12.1.min.js') }}"></script>
+<!-- popper js -->
+<script src="{{ asset('template/js/popper.min.js') }}"></script>
+<!-- bootstrap js -->
+<script src="{{ asset('template/js/bootstrap.min.js') }}"></script>
+<!-- easing js -->
+<script src="{{ asset('template/js/jquery.magnific-popup.js') }}"></script>
+<!-- swiper js -->
+<script src="{{ asset('template/js/swiper.min.js') }}"></script>
+<script src="{{ asset('template/js/wow.min.js') }}"></script>
+<script src="{{ asset('template/js/jquery.smooth-scroll.min.js') }}"></script>
+<!-- swiper js -->
+<script src="{{ asset('template/js/masonry.pkgd.js') }}"></script>
+<!-- particles js -->
+<script src="{{ asset('template/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('template/js/jquery.nice-select.min.js') }}"></script>
+<!-- swiper js -->
+<script src="{{ asset('template/js/slick.min.js') }}"></script>
+<script src="{{ asset('template/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('template/js/waypoints.min.js') }}"></script>
+<!-- contact js -->
+<script src="{{ asset('template/js/jquery.ajaxchimp.min.js') }}"></script>
+<script src="{{ asset('template/js/jquery.form.js') }}"></script>
+<script src="{{ asset('template/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('template/js/mail-script.js') }}"></script>
+<script src="{{ asset('template/js/contact.js') }}"></script>
+<!-- custom js -->
+<script src="{{ asset('template/js/custom.js') }}"></script>
+<script>
+    document.getElementById("donationbundle_association_imageFile_file").required = false;
+    document.getElementById("donationbundle_association_imageFile").required = false;
+
+</script>
+</body>
+</html>

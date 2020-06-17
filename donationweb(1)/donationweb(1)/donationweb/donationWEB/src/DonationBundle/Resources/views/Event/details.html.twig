@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>Events</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- breadcrumb start-->
+    <section class="blog_area section_padding">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8 mb-5 mb-lg-0">
+    <div class="blog_left_sidebar">
+    <article class="blog_item">
+        <div class="blog_item_img">
+            <img class="img-fluid rounded" src="{{ asset('uploads/post/' ~ poster) }}" alt="{{ nameEv }}">
+            <a href="#" class="blog_item_date">
+                <h3>{{ dateEv|date }}</h3>
+
+            </a>
+        </div>
+
+        <div class="blog_details">
+            <a class="d-inline-block" href="single-blog.html">
+                <a href="{{ path('donation_listpage') }}"><h2>{{ nameEv|upper }}</h2></a>
+            </a>
+            <p>{{ typeEv }}</p>
+            <p>{{ equipementEv }}</p>
+            <p>{{ descripionEv }}</p>
+            <H2>{{ nameAc }}</H2>
+            <p>{{ typeAc }}</p>
+            <p>{{ duration }} minute</p>
+            <p>{{ descriptionAc }}</p>
+            {% if connected!=null %}
+            {{ socialButtons() }}
+            {% endif %}
+
+
+        </div>
+    </article>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+{% endblock %}

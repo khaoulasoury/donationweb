@@ -1,0 +1,117 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block body %}
+
+ <!-- ============================================================== -->
+         <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                     <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Dashboard Administrateur</h2>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Modification de produit</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+
+
+  
+        
+        <hr >
+        <h1>  Modofier produit </h1>
+        <hr >
+        
+         <form action="/Donation/product/editdb/{{ product.idProduct }}" method="post">
+            <div class="form-group">
+            <label> Nom produit </label>
+            <input class="form-control" type="text" name="nameproduct" id="" value="{{ product.nameProduct }}">
+            </div>
+            <div class="form-group">
+            <label> Quantite produit </label>
+            <input class="form-control" type="number" min="0" name="qteproduct" id="" value="{{ product.quantityTotal }}">
+            </div>
+            <div class="form-group">
+            <label> Quantite restant produit </label>
+            <input class="form-control" type="number" min="0" name="restproduct" id="" value="{{ product.quantityRemaining }}">
+            </div>
+            <div class="form-group">
+            <label> Prix produit </label>
+             <input class="form-control" type="number" min="0" name="prixproduct" id="" value="{{ product.priceProduct }}">
+            </div>
+
+            <div class="form-group">
+            <label> Description produit </label>
+            <textarea class="form-control" name="descriptionproduct">{{ product.descriptionProduct }}</textarea>
+            </div>
+            <div class="form-group">
+            <label> Association </label>
+              <select class="form-control" name="idassociation">
+            {% for association in associations %}
+                {% if association.idAssociation == product.idAssociation.idAssociation %}
+                <option selected value="{{ association.idAssociation }}">{{ association.nomAssociation }}</option>
+                {% else %}
+                 <option value="{{ association.idAssociation }}">{{ association.nomAssociation }}</option>
+                {% endif %}
+            {% endfor %}
+            </select>
+            </div>
+            
+            
+            
+           
+            <button class="btn btn-primary">Modifier</button>
+           
+        </form>
+           
+
+
+                    </div>
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                             Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        </div>
+
+</div>
+{% endblock %}

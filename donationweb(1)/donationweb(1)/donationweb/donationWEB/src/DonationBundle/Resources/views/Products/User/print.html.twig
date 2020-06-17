@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Donation</title>
+    <link rel="icon" href="{{ asset('template/img/favicon.png') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/bootstrap.min.css') }}">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/animate.css') }}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/owl.carousel.min.css') }}">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/themify-icons.css') }}">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/flaticon.css') }}">
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/magnific-popup.css') }}">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/nice-select.css') }}">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/slick.css') }}">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+</head>
+
+<body>
+
+        <div class="container" style="text-align:center">
+        <img src="{{ asset('logo.png') }}" style="width:30%" >
+            <h1> Ligne de commande </h1>
+        <h2> Nom d'association : {{ cl.idproduct.idAssociation.nomAssociation }} </h2>
+         
+         <h2> Client: {{ connected.username }}</h2>
+      
+         <h2> Email  :  {{ connected.email }}</h2>
+      
+         <h2> Produit :  {{ cl.idproduct.nameProduct }}</h2>
+         
+         <h2> Quantite :  {{ cl.idCommand.quantityProduct }}</h2>
+         
+         <h3> Date Livraison : {{ cl.dateLiv |date('Y-m-d') }}  </h3>
+         <h3> Etat de commande : {{ cl.stateCommand }}  </h3>
+         <h3> Type de commande : {{ cl.typeCommand }}  </h3>
+            <h3>Paid:{{ cl.idCommand.paid}}</h3>
+
+        </div>
+
+
+<body>
+<script>
+    window.print(); 
+</script>
+
+</html>

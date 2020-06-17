@@ -1,0 +1,69 @@
+
+{% extends 'dashboard.html.twig' %}
+{% block body %}
+    <div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-10">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header" id="top">
+                            <h2 class="pageheader-title">Add Activity </h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Activity Form</h5>
+                    <div class="card-body">
+
+                        {{ form_start(form)}}
+                        <div>
+                            <label>Event Name :</label>
+                            <br>
+                            {{ form_widget(form.nameEv,{'attr':{'type':'text','class':'form-control'}}) }}
+                            <br>
+                        </div>
+                        <div>
+                            <label>Activity Name :</label>
+                            <br>
+                            {{ form_widget(form.nameAc,{'attr':{'type':'text','class':'form-control'}})  }}
+                        </div>
+                        <div>
+                            <br>
+                            <label>Duration :</label>
+                            <br>
+                            {{ form_widget(form.duration,{'attr':{'type':'text','class':'form-control'}}) }}
+                        </div>
+                        <div>
+                            <br>
+                            <label>Activity Type :</label>
+                            {{ form_widget(form.typeAc,{'attr':{'type':'text','class':'form-control'}}) }}
+                        </div>
+                        <div>
+                            <br>
+                            <label>Description :</label>
+                            {{ form_widget(form.descriptionAc,{'attr':{'type':'text','class':'form-control'}}) }}
+                        </div>
+                        <br><br>
+
+                        <div class="row justify-content-center">
+                            <div>
+                                {{ form_widget(form.submit,{'attr':{'class':'btn btn-success'}}) }}
+                                <a href="{{ path('donation_displayacpage') }}" class="btn btn-success">Close</a>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{ form_end(form)}}
+{% endblock %}

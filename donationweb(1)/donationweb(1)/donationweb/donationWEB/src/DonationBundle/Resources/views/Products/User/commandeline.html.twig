@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <div class="breadcrumb_iner_item text-center">
+                            <h2>Ligne de commande</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+    <!-- feature_part start-->
+    <section class="feature_part">
+        <div class="container">
+
+         
+
+
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p> Ligne de commande</p>
+                        <h2>Valider la reception de commande </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+               <div class="col-md-10 offset-2">
+            
+                  <h1> </h1>
+         <form action="/Donation/product/commandlinedb" method="post">
+
+         <h2> Client : {{ connected.username }}</h2>
+         <hr />
+         <h2> Email  :  {{ connected.email }}</h2>
+         <hr />
+         <h2> Produit :  {{ product.nameProduct }}</h2>
+         <hr />
+         <h2> Quantite :  {{ command.quantityProduct }}</h2>
+         <hr />
+         <input type="hidden" value="{{ command.idCommand }}" name="idcommande">
+          <input type="hidden" value="{{ command.dateCommand|date_modify("+1 day")|date("y-m-d") }}" name="datecommande">
+
+            <div class="form-group">
+                     <select required class="form-control"  name="type" >
+                        <option value="Delivry at home ">Delivry at home </option>
+                        <option value="Delivry by post">Delivry by post</option>
+                        <option value="hand to hand">hand to hand</option>
+                     </select>
+            </div>
+
+              <div class="form-group">
+                     <select required class="form-control"  name="state" >
+                        <option value="well received">well received </option>
+                        <option value="In preparation">In preparation</option>
+                        
+                     </select>
+            </div>
+           
+            
+           
+            <button class="btn btn-primary" type="submit">Ajouter</button>
+            <a class="btn btn-secondary" href="/Donation/product/commande/edit/{{ command.idCommand}}" >Modifier Commande</a>
+           
+        </form>
+
+                </div>
+                
+                <div class="col-md-10 offset-2">
+                <hr />
+                        <h1> liste des anciennes commande </h1>
+                <hr />
+
+                <table class="table">
+                    <thead  >
+                        <th>Commande </th>
+                        <th>Date </th>
+                        <th>Action </th>
+                    </thead>
+                    {% set i = 1 %}
+                    {% for comm in commandes %}
+                        {% if i == 1 %}
+
+                                    <tr>
+                                    
+                                        <td>{{ i }}  / La Commande Courante </td>
+                                        <td>{{ comm.dateCommand | date("m/d/Y") }}</td>
+                                        <td><a href="/Donation/product/commande/delete/{{ comm.idCommand }}" class="btn btn-danger" onclick="confirm('Voulez vous supprimer la commande ')" >Supprimer </a> </td>
+                                    
+                                    </tr>
+                        {% else %}
+
+                                    <tr>
+
+                                        <td>{{ i }} </td>
+                                        <td>{{ comm.dateCommand | date("m/d/Y") }}</td>
+                                        <td><a href="/Donation/product/commande/delete/{{ comm.idCommand }}" class="btn btn-danger" onclick="confirm('Voulez vous supprimer la commande ')" >Supprimer </a> </td>
+                                    
+                                    </tr>
+                        
+                        {% endif %}
+                    {% set i = i + 1 %}
+                    {% endfor  %}
+                    <tbody>
+                    </tbody>
+                </table>
+
+                </div>
+                
+
+             
+              
+               
+            </div>
+        </div>
+    </section>
+    <!-- feature_part start-->
+
+
+    <!-- intro_video_bg start-->
+    <section class="intro_video_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="intro_video_iner text-center">
+                        <h2>Forget what you can get and
+                            see what you can give</h2>
+                        <a href="#" class="btn_2">Become a Volunteer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- intro_video_bg part start-->
+
+
+    <!--::our client part start::-->
+    <section class="client_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <p></p>
+                        <h2>Worldwide Associations</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="client_logo owl-carousel">
+                        <div class="single_client_logo">
+                            <img src="{{asset('template/img/client_logo/Logo_1.png')}}" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="{{asset('template/img/client_logo/Logo_2.png')}}" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="{{asset('template/img/client_logo/Logo_3.png')}}" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="{{asset('template/img/client_logo/Logo_4.png')}}" alt="">
+                        </div>
+                        <div class="single_client_logo">
+                            <img src="{{asset('template/img/client_logo/Logo_5.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--::our client part end::-->
+
+
+{% endblock %}
+
+
+      
+
+
+            
+      

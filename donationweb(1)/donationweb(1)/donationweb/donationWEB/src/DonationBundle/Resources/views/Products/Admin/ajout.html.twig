@@ -1,0 +1,118 @@
+{% extends 'dashboard.html.twig' %}
+
+{% block body %}
+
+    <!-- ============================================================== -->
+    <!-- end left sidebar -->
+    <!-- ============================================================== -->
+    <!-- wrapper  -->
+    <!-- ============================================================== -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Dashboard Administrateur</h2>
+                            <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Ajout de produit</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader  -->
+                <!-- ============================================================== -->
+
+
+
+
+                <hr >
+                <h1>  Ajouter produit </h1>
+                <hr >
+
+                <form action="/Donation/product/adddb" method="post" name="addp" onsubmit="return isValidQte()">
+                    <div class="form-group">
+                        <input required class="form-control" type="text" name="nameproduct" placeholder="Nom de produit içi ...">
+                    </div>
+                    <div class="form-group">
+                        <input required  class="form-control" type="number" min="0" name="qteproduct" placeholder="Quantite de produit içi ...">
+                    </div>
+                    <div class="form-group">
+                        <input required class="form-control" type="number" min="0" name="restproduct" placeholder="La reste de produit içi ...">
+                        <div id="err" style="color:red"></div>
+                    </div>
+                    <div class="form-group">
+                        <input required class="form-control" type="number" min="0" name="prixproduct" placeholder="Le prix de produit içi ...">
+                    </div>
+
+                    <div class="form-group">
+                        <textarea required class="form-control" name="descriptionproduct" placeholder="Description de produit içi ..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="idassociation">
+                            {% for association in associations %}
+
+                                <option value="{{ association.idAssociation }}">{{ association.nomAssociation }}</option>
+
+                            {% endfor %}
+                        </select>
+                    </div>
+
+
+
+
+                    <button class="btn btn-primary" type="submit">Ajouter</button>
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="javascript: void(0);">About</a>
+                            <a href="javascript: void(0);">Support</a>
+                            <a href="javascript: void(0);">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end footer -->
+        <!-- ============================================================== -->
+    </div>
+</div>
+
+</div>
+
+{% endblock %}
+ 
+        
+  
+           
+

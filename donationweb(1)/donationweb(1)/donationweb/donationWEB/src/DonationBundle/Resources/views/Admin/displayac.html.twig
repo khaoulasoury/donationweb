@@ -1,0 +1,77 @@
+{% extends 'dashboard.html.twig' %}
+{% block body %}
+
+    <div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+    <div class="row">
+    <div class="col-xl-10">
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="page-header" id="top">
+                <h2 class="pageheader-title"> </h2>
+
+            </div>
+        </div>
+    </div>
+<div class="card">
+    <h5 class="card-header"> activities</h5>
+    <div class="card-body">
+        <div class="row justify-content-left">
+            <a href="{{ path('donation_adminajoutpage') }}" class="btn btn-rounded btn-primary">+Add</a>
+        </div>
+        <div class="table-responsive">
+            <table id="example2" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                <tr>
+                    <th>
+                        <div class="row justify-content-center">
+                            Event Name
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row justify-content-center">
+                            Activity name
+                        </div>
+                    </th>
+                    <th>
+                        <div class="row justify-content-center">
+                            Action
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+
+                {% for posts in posts %}
+
+                    <td>
+                        <div class="row justify-content-center">
+                            {{ posts.nameEv }}
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="row justify-content-center">
+                            {{ posts.nameAc }}
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="row justify-content-center">
+                            <a href="{{ path('donation_adminupdateacpage',{'id': posts.idAc}) }}">
+                                <button class="btn btn-rounded btn-success">Update</button></a>
+                            <a href="{{ path('donation_admindeletacepage',{'id': posts.idAc}) }}">
+                                <button class="btn btn-rounded btn-danger">Delete</button></a>
+                        </div>
+                    </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+    </div>
+
+{% endblock %}

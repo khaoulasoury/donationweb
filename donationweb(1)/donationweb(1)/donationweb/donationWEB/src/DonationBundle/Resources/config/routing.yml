@@ -1,0 +1,231 @@
+donation_homepage:
+    path:     /
+    defaults: { _controller: DonationBundle:Default:index }
+donation_eventpage:
+    path:     /Events
+    defaults: { _controller: DonationBundle:Donation:event }
+donation_addeventpage:
+    path:     /addevent
+    defaults: { _controller: DonationBundle:Donation:addevent }
+donation_addactivitypage:
+    path:     /addactivity
+    defaults: { _controller: DonationBundle:Donation:addactivity }
+donation_ajoutpage:
+    path:     /ajout
+    defaults: { _controller: DonationBundle:Donation:ajout }
+donation_listpage:
+    path:     /list
+    defaults: { _controller: DonationBundle:Donation:listpost }
+donation_smplistpage:
+    path:     /listuser
+    defaults: { _controller: DonationBundle:Donation:smpllist }
+donation_updatepage:
+    path:     /update/{id}
+    defaults: { _controller: DonationBundle:Donation:update }
+donation_deletepage:
+    path:     /delete/{id}
+    defaults: { _controller: DonationBundle:Donation:deletepost }
+donation_detailspage:
+    path:     /details/{id}
+    defaults: { _controller: DonationBundle:Donation:details }
+donation_ajoutacpage:
+    path:     /ajoutac
+    defaults: { _controller: DonationBundle:Donation:ajoutac }
+donation_adminajoutacpage:
+    path:     /adminadd
+    defaults: { _controller: DonationBundle:Donation:adminajout }
+donation_adminajoutpage:
+    path:     /adminaddac
+    defaults: { _controller: DonationBundle:Donation:adminajoutac }
+donation_displaypage:
+    path:     /display
+    defaults: { _controller: DonationBundle:Donation:display }
+donation_displayacpage:
+    path:     /displayac
+    defaults: { _controller: DonationBundle:Donation:displayac }
+donation_admindeletepage:
+    path:     /deletedisplay/{id}
+    defaults: { _controller: DonationBundle:Donation:admindelete }
+donation_admindeletacepage:
+    path:     /deletedisplayac/{id}
+    defaults: { _controller: DonationBundle:Donation:admindeleteac }
+donation_adminupdatepage:
+    path:     /adminupdate/{id}
+    defaults: { _controller: DonationBundle:Donation:adminupdate }
+donation_adminupdateacpage:
+    path:     /adminupdateac/{id}
+    defaults: { _controller: DonationBundle:Donation:adminupdateac }
+calendar:
+    resource: "@CalendarBundle/Resources/config/routing.yaml"
+donation_Calendarpage:
+    path:     /calendar
+    defaults: { _controller: DonationBundle:Donation:calendar }
+events_index:
+    path:     /listuse
+    defaults: { _controller: DonationBundle:Donation:indexx }
+events_indexx:
+    path:     /listadm
+    defaults: { _controller: DonationBundle:Donation:indexxx }
+events_indexxx:
+    path:     /listad
+    defaults: { _controller: DonationBundle:Donation:indexxxx }
+events_add_membership:
+    path:     /listad
+    defaults: { _controller: DonationBundle:Donation:addMembership }
+events_delete_membership:
+    path:     /listad
+    defaults: { _controller: DonationBundle:Donation:deleteMembership }
+login_association:
+    path:     /LoginAssociation
+    defaults: { _controller: DonationBundle:Association:LoginAssociation }
+
+register_association:
+    path:     /RegisterAssociation
+    defaults: { _controller: DonationBundle:Association:RegisterAssociation }
+
+homepage_Association:
+    path:     /indexAssociation
+    defaults: { _controller: DonationBundle:Association:IndexAssociation }
+
+display_Association:
+    path:     /DisplayAssociation
+    defaults: { _controller: DonationBundle:Association:DisplayAssociation }
+
+update_Association:
+    path:     /UpdateAssociation
+    defaults: { _controller: DonationBundle:Association:UpdateAssociation }
+
+delete_Association:
+    path:     /DeleteAssociation
+    defaults: { _controller: DonationBundle:Association:DeleteAssociation }
+
+delete_Association_Admin:
+    path:     /DeleteAssociationAdmin/{id}
+    defaults: { _controller: DonationBundle:Association:DeleteAssociationAdmin }
+
+logout_Association:
+    path:     /logoutAssociation
+    defaults: { _controller: DonationBundle:Association:LogoutAssociation }
+
+add_Action:
+    path:     /AddAction/{id}
+    defaults: { _controller: DonationBundle:Action:AddAction }
+
+display_Action:
+    path:     /DisplayAction
+    defaults: { _controller: DonationBundle:Action:DisplayAction }
+
+update_Action:
+    path:     /UpdateAction/{id}
+    defaults: { _controller: DonationBundle:Action:UpdateAction }
+
+delete_Action:
+    path:     /DeleteAction/{id}
+    defaults: { _controller: DonationBundle:Action:DeleteAction }
+delete_Action_Admin:
+    path:     /DeleteActionAdmin/{id}
+    defaults: { _controller: DonationBundle:Action:DeleteActionAdmin }
+
+display_Action_Admin:
+    path:     /DisplayActionAdmin
+    defaults: { _controller: DonationBundle:Action:DisplayActionAdmin }
+
+participate_Action:
+    path:     /ParticipateAction/{id}
+    defaults: { _controller: DonationBundle:Action:ParticipateAction }
+
+display_Association_Admin:
+    path:     /DisplayAssociationAdmin
+    defaults: { _controller: DonationBundle:Association:DisplayAssociationAdmin }
+
+send_Email_Admin:
+    path:     /sendEmail
+    defaults: { _controller: DonationBundle:Association:sendEmail }
+
+stat_Action_Admin:
+    path:     /StatActionAdmin
+    defaults: { _controller: DonationBundle:Action:StatActionAdmin }
+
+search_Action:
+    path:     /Search
+    defaults: { _controller: DonationBundle:Action:Search }
+Home:
+    path:     /home
+    defaults: { _controller: DonationBundle:Admin:home }
+
+donation_Productspage:
+    path:     /products
+    defaults: { _controller: DonationBundle:Products:ListeProducts }
+
+donation_Productdeletepage:
+    path:     /product/delete/{id}
+    defaults: { _controller: DonationBundle:Products:DeleteProduct }  
+donation_Productaddpage:
+    path:     /product/add
+    defaults: { _controller: DonationBundle:Products:AddProduct }
+donation_Productdbaddpage:
+    path:     /product/adddb
+    defaults: { _controller: DonationBundle:Products:AddProductDb }
+    methods:    POST|HEAD
+donation_Productdbeditpage:
+    path:     /product/editdb/{id}
+    defaults: { _controller: DonationBundle:Products:EditProductDb }
+    methods:    POST|HEAD
+
+donation_Producteditpage:
+    path:     /product/edit/{id}
+    defaults: { _controller: DonationBundle:Products:EditProduct }
+
+donation_Producttauxpage:
+    path:     /product/taux/{id}
+    defaults: { _controller: DonationBundle:Products:TauxProduct }
+
+
+donation_Commandpage:
+    path:     /product/command/{id}
+    defaults: { _controller: DonationBundle:Products:Commande }
+
+
+
+donation_Commanddbpage:
+    path:     /product/commanddb
+    defaults: { _controller: DonationBundle:Products:CommandeDb }
+    methods:    POST|HEAD
+
+donation_Commandlinepage:
+    path:     /product/commandline/{id}
+    defaults: { _controller: DonationBundle:Products:CommandeLine }
+
+donation_Commandlinedbpage:
+    path:     /product/commandlinedb
+    defaults: { _controller: DonationBundle:Products:CommandeLineDb }
+    methods:    POST|HEAD    
+donation_printpage:
+    path:      /print/{id}
+    defaults: { _controller: DonationBundle:Products:print }
+
+donation_Commandeditpage:
+    path:     /product/commande/edit/{id}
+    defaults: { _controller: DonationBundle:Products:EditCommande }
+
+donation_delecommande:
+    path:     /product/commande/delete/{id}
+    defaults: { _controller: DonationBundle:Products:DeleteCommande }
+donation_Commandeditdbpage:
+    path:     /product/commande/editdb
+    defaults: { _controller: DonationBundle:Products:EditdbCommande }
+    methods:    POST|HEAD
+donation_searchpage:
+    path:     /product/search
+    defaults: { _controller: DonationBundle:Products:search }
+    methods:    POST|HEAD  
+donation_tripage:
+    path:     /product/tri
+    defaults: { _controller: DonationBundle:Products:tri }
+    methods:    POST|HEAD
+
+donation_stripepage:
+    path:     /product/stripe/{id}
+    defaults: { _controller: DonationBundle:Products:Stripe }
+    
+   

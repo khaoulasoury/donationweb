@@ -1,0 +1,56 @@
+{% extends 'dashboard.html.twig' %}
+{% block body %}
+
+
+
+
+
+
+
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+        <div  style="left: 300px;"class="card">
+            <h5 class="card-header">Actions</h5>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="bg-light">
+                    <tr class="border-0">
+                        <th class="border-0">#</th>
+                        <th class="border-0">Image</th>
+                        <th class="border-0">Name</th>
+                        <th class="border-0">Date</th>
+                        <th class="border-0">Location</th>
+                        <th class="border-0">Volunteers</th>
+                        <th class="border-0">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%  for i in 0..Actions|length-1 %}
+                        <tr>
+                            <td>{{ i+1 }}</td>
+                            <td>
+                                <div class="m-r-10"><img src="{{ asset('uploads/associations/' ~ Actions[i].imageName) }}" alt="user" class="rounded" width="45"></div>
+                            </td>
+                            <td>{{Actions[i].nameAction}}</td>
+                            <td>{{Actions[i].dateAction}}</td>
+                            <td>{{Actions[i].locationAction}}</td>
+                            <td>{{Actions[i].nbvAction}}</td>
+                            <td>{{Actions[i].description}}</td>
+                            <td> <a  href="{{ path('delete_Action_Admin',{ 'id':Actions[i].idAction}) }}" class="genric-btn info-border circle">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View Details</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- ============================================================== -->
+<!-- end recent orders  -->
+
+
+{% endblock %}

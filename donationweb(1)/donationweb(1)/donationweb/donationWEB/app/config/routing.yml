@@ -1,0 +1,15 @@
+donation:
+    resource: "@DonationBundle/Resources/config/routing.yml"
+    prefix:   /Donation
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /User
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
